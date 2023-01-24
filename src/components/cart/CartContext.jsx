@@ -5,14 +5,13 @@ export default class CartContext {
         this.setCart = setCart;
     }
 
-    addToCart(planet) {
-        this.cart.push(planet);
-        this.setCart(this.cart);
+    addToCart(planet) { 
+        this.setCart(oldArray => [...this.cart, planet]);
     }
 
     removeFromCart(planet) {
         const newCart = this.cart.filter(p => p.id !== planet.id);
-        this.setCart(newCart);
+        this.setCart(oldArray => newCart);
     }
 
     resetCart() {

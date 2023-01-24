@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import './App.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Planets from "./components/shop/Planets";
@@ -30,7 +30,6 @@ function App() {
     "distance": "1426",
     "description": "Saturn is the sixth planet from the Sun and the most distant that can be seen with the naked eye. Saturn is the second largest planet and is best known for its fabulous ring system that was first observed in 1610 by the astronomer Galileo Galilei. Like Jupiter, Saturn is a gas giant and is composed of similar gasses including hydrogen, helium and methane."
   }]);
-
 
   return (
     <CartContextContainer.Provider value={new CartContext(cart, setCart)}>
