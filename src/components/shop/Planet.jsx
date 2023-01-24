@@ -1,11 +1,14 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import Button from '@mui/material/Button';
 import Modal from '@mui/material/Modal';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
+import { CartContextContainer } from '../../App';
 
 
 function Planet({ planet }) {
+    const cartClass = useContext(CartContextContainer);
+
     const [open, setOpen] = React.useState(false);
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
@@ -25,7 +28,7 @@ function Planet({ planet }) {
             </div>
             <div>
                 <Button variant="outlined" onClick={handleClick}>Show Details</Button>
-                <Button variant="outlined">Add To Cart</Button>
+                <Button variant="outlined" onClick={() => cartClass.addToCart(planet)}>Add To Cart</Button>
             </div>
         </>)
 

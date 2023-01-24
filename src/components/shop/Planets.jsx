@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import Layout from './Layout'
+import Layout from '../Layout'
 import Planet from './Planet'
 import Grid from '@mui/material/Grid';
 import TextField from '@mui/material/TextField';
